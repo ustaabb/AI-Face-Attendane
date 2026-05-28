@@ -1,0 +1,321 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0f172a;
+  color: white;
+
+  overflow-x: hidden; /* ✅ KEEP THIS */
+}
+
+/* 🔥 MAIN CONTAINER */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;  /* 🔥 change this */
+  width: 100vw;
+}
+
+.full-height {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  min-width: 240px; /* ✅ FIX SHRINK */
+  height: 100vh;
+  background: #020617;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  color: #c77dff;
+  margin-bottom: 30px;
+}
+
+/* MENU ITEMS */
+.menu-item {
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.menu-item:hover {
+  background: rgba(199, 125, 255, 0.1);
+  box-shadow: 0 0 10px #c77dff;
+}
+
+.menu-item.active {
+  background: #c77dff;
+  color: white;
+  box-shadow: 0 0 15px #c77dff;
+}
+
+.dashboard-content {
+  flex: 1;
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+/* CARD */
+.card {
+  width: 100%;
+  max-width: 100%;
+  flex-grow: 1;   /* 🔥 IMPORTANT */
+}
+
+/* FORM */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-group input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #1f2937;
+  color: white;
+}
+
+/* BUTTON */
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #c77dff;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #a855f7;
+}
+
+/* 🔥 LIST TABLE STYLE */
+.list-item {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);  /* ✅ FIX */
+  padding: 12px;
+  border-bottom: 1px solid #374151;
+  text-align: center;
+}
+
+.list-item span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 🔥 DARK HEADER BAR */
+.list-header {
+  background: #1e293b; /* solid dark bar */
+  border-radius: 10px;
+  font-weight: 600;
+
+  box-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.4),
+    inset 0 0 10px rgba(199, 125, 255, 0.1);
+
+  margin-bottom: 10px;
+}
+
+/* 🔥 TEACHER LAYOUT (IMPROVED) */
+.teacher-container {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 30px;
+  width: 100%;
+  align-items: stretch;
+}
+
+/* 🔥 FULL WIDTH DARK BAR (LIKE SIDEBAR THEME) */
+.teacher-topbar {
+  display: flex;
+  gap: 20px;
+
+  width: 100%;
+  padding: 12px 20px;
+
+  background: #020617; /* same as sidebar */
+  border-radius: 12px;
+
+  /* 🔥 soft glow like sidebar */
+  box-shadow: 
+    0 0 20px rgba(199, 125, 255, 0.15),
+    inset 0 0 10px rgba(199, 125, 255, 0.1);
+
+  margin-bottom: 25px;
+}
+
+.teacher-container > div:last-child {
+  max-height: 80vh;     /* ✅ LIMIT HEIGHT */
+  overflow-y: auto;     /* ✅ ENABLE SCROLL */
+}
+
+.teacher-form {
+  height: auto;
+  position: sticky;
+  top: 20px;   /* ✅ STAYS FIXED WHILE SCROLLING */
+}
+
+.teacher-list {
+  width: 100%;
+}
+
+/* 🔥 NEW: TEACHER GRID VIEW */
+.teacher-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+/* 🔥 NEW: TEACHER CARD */
+.teacher-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 18px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(199, 125, 255, 0.2);
+  transition: 0.3s;
+}
+
+.teacher-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(199, 125, 255, 0.3);
+}
+
+.teacher-name {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.teacher-email {
+  font-size: 13px;
+  color: #9ca3af;
+  margin-bottom: 10px;
+}
+
+.teacher-info {
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.btn-active {
+  background: linear-gradient(45deg, #a855f7, #6366f1);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-disabled {
+  background: #555;
+  color: #aaa;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.selected-row {
+  background: rgba(199, 125, 255, 0.2);
+  box-shadow: 0 0 10px #c77dff;
+}
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #c77dff;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #c77dff;
+  z-index: 1000;
+}
+
+/* 🔥 HIDE html5-qrcode file upload */
+/* 🔥 Hide only "Scan an image file" button */
+#reader__filescan_region > div:first-child {
+  display: none !important;
+}
+
+/* 🔥 Styled dropdowns */
+select {
+  padding: 8px 12px;
+  margin: 5px;
+  border-radius: 8px;
+  border: none;
+  background: #1f2937;
+  color: white;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Hover */
+select:hover {
+  background: #374151;
+}
+
+/* Focus */
+select:focus {
+  box-shadow: 0 0 5px #a855f7;
+}
+
+/* Option */
+select option {
+  background: #1f2937;
+  color: white;
+}
+
+select {
+  transition: 0.3s;
+}
+
+select:hover {
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+}
+
+/* 🔥 LOGIN INPUT STYLING */
+.login-container input {
+  width: 250px;
+  padding: 10px 12px;
+  margin: 5px 5px 10px 0;
+
+  border-radius: 8px;
+  border: 1px solid #374151;
+
+  background: #1f2937;
+  color: white;
+
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* 🔥 HOVER EFFECT */
+.login-container input:hover {
+  background: #374151;
+}
+
+/* 🔥 FOCUS GLOW */
+.login-container input:focus {
+  border: 1px solid #c77dff;
+  box-shadow: 0 0 10px rgba(199, 125, 255, 0.6);
+}
+
+/* 🔥 PLACEHOLDER COLOR */
+.login-container input::placeholder {
+  color: #9ca3af;
+}

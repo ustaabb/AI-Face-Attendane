@@ -1,0 +1,11 @@
+Django>=4.0
+ djangorestframework
+ djangorestframework-simplejwt
+ numpy
+ opencv-python
+ deepface
+ qrcode
+ pymysql
+ pillow
+ tensorflow
+ keras

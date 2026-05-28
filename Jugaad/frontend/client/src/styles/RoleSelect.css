@@ -1,0 +1,122 @@
+/* 🔥 ROLE PAGE (MATCH DASHBOARD THEME) */
+.role-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #0f172a; /* SAME as dashboard */
+}
+
+/* Heading */
+.heading {
+  font-size: 34px;
+  margin-bottom: 50px;
+  color: white;
+  letter-spacing: 1px;
+}
+
+/* Cards Layout */
+.role-cards {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* 🔥 CARD BASE (GLASS EFFECT LIKE DASHBOARD) */
+.role-card {
+  width: 260px;
+  height: 230px;
+
+  background: rgba(255, 255, 255, 0.05);   /* SAME glass */
+  backdrop-filter: blur(10px);
+
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+
+  border: 1px solid rgba(199, 125, 255, 0.2);
+
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(199, 125, 255, 0.15);
+}
+
+/* Icon */
+.role-icon {
+  font-size: 42px;
+  margin-bottom: 12px;
+}
+
+/* 🔥 HOVER = SAME PURPLE GLOW SYSTEM */
+.role-card:hover {
+  transform: translateY(-6px) scale(1.05);
+
+  background: rgba(199, 125, 255, 0.1);
+  border: 1px solid #c77dff;
+
+  box-shadow: 
+    0 0 20px rgba(199, 125, 255, 0.4),
+    0 0 40px rgba(199, 125, 255, 0.2);
+}
+
+/* 🔥 OPTIONAL: Slight Role Variations (still theme-safe) */
+.role-card.admin:hover {
+  box-shadow: 0 0 25px #c77dff;
+}
+
+.role-card.teacher:hover {
+  box-shadow: 0 0 25px #a855f7;
+}
+
+.role-card.student:hover {
+  box-shadow: 0 0 25px #9333ea;
+}
+
+/* Text */
+.role-card h2 {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.role-card p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* 🔥 TOP BAR CONTAINER */
+.teacher-topbar {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+/* 🔹 NORMAL TAB */
+.top-item {
+  padding: 12px 22px;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #e5e7eb;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+/* 🔹 HOVER EFFECT */
+.top-item:hover {
+  background: rgba(199, 125, 255, 0.15);
+  box-shadow: 0 0 10px rgba(199, 125, 255, 0.5);
+}
+
+/* 🔥 ACTIVE TAB (LIKE YOUR IMAGE) */
+.active-top {
+  background: linear-gradient(45deg, #c77dff, #9333ea);
+  color: white;
+
+  box-shadow: 
+    0 0 12px #c77dff,
+    0 0 25px rgba(199, 125, 255, 0.6);
+
+  font-weight: 600;
+}

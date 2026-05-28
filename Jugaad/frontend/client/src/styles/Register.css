@@ -1,0 +1,140 @@
+/* 🔥 BACKGROUND (same theme as project) */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0f172a;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 🔥 MAIN CONTAINER */
+.student-register-container {
+  width: 100%;
+  max-width: 900px;
+  padding: 30px;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(199, 125, 255, 0.2);
+
+  box-shadow: 
+    0 0 30px rgba(199, 125, 255, 0.2),
+    inset 0 0 10px rgba(199, 125, 255, 0.1);
+
+  color: white;
+}
+
+/* 🔥 TITLE */
+.student-register-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #c77dff;
+}
+
+/* 🔥 FORM GRID */
+.student-register-container form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 🔥 clean layout */
+  gap: 12px;
+}
+
+/* FULL WIDTH ELEMENTS */
+.student-register-container h2,
+.student-register-container select,
+.webcam-container,
+.capture-btn,
+.submit-btn {
+  grid-column: span 2;
+}
+
+/* 🔥 INPUTS */
+/* 🔥 INPUTS FIX */
+.student-register-container input,
+.student-register-container select {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+
+  border: 1px solid rgba(199, 125, 255, 0.2);
+
+  background: rgba(31, 41, 55, 0.8);
+  color: white;
+
+  outline: none;
+  transition: 0.3s;
+
+  /* 🔥 IMPORTANT FIX */
+  box-sizing: border-box;
+}
+
+/* 🔥 ADD GAP BETWEEN GRID ITEMS */
+.student-register-container form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px; /* 🔥 increase spacing */
+}
+
+/* HOVER */
+.student-register-container input:hover,
+.student-register-container select:hover {
+  background: #374151;
+}
+
+/* FOCUS GLOW */
+.student-register-container input:focus,
+.student-register-container select:focus {
+  border: 1px solid #c77dff;
+  box-shadow: 0 0 10px rgba(199, 125, 255, 0.6);
+}
+
+/* PLACEHOLDER */
+.student-register-container input::placeholder {
+  color: #9ca3af;
+}
+
+/* 🔥 WEBCAM */
+.webcam-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.webcam-container video {
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(199, 125, 255, 0.4);
+}
+
+/* 🔥 BUTTONS */
+.capture-btn,
+.submit-btn {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* CAPTURE BUTTON */
+.capture-btn {
+  background: linear-gradient(45deg, #6366f1, #a855f7);
+  color: white;
+}
+
+/* REGISTER BUTTON */
+.submit-btn {
+  background: linear-gradient(45deg, #a855f7, #c77dff);
+  color: white;
+}
+
+/* HOVER EFFECT */
+.capture-btn:hover,
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px #c77dff;
+}
